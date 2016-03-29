@@ -1,0 +1,11 @@
+div.container {
+   background-color: red;
+}
+div.location {
+   text-align: center;
+   background-color: white;
+   /*color: white;*/
+   display: inline-block;
+   width: 20%;
+   padding: 2%;
+}

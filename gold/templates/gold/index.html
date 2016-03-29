@@ -2,16 +2,18 @@
 <html>
    <head>
       <meta charset="utf-8">
-      <link rel="stylesheet" href="{% static 'gold/style.css' %}" media="screen">
       <title>Ninja Gold</title>
+      {% load staticfiles %}
+      <link rel="stylesheet" href="{% static 'gold/style.css' %}">
    </head>
    <body>
       <div class="container">
          <h1>Ninja Gold Game</h1>
+         <h2>Gold: {{ total }}</h2>
          <div class="location">
             <h3>House</h3>
             <h4>Earn 5-10 gold</h4>
-            <form class="" action="{% url 'process' %}" method="post">
+            <form class="" action="{% url 'house' %}" method="post">
                {% csrf_token %}
                <input type="hidden" name="building" value="house">
                <input type="submit" class="btn btn-info" name="enter" value="come on in">
@@ -20,27 +22,27 @@
          <div class="location">
             <h3>Cave</h3>
             <h4>Earn 5-10 gold</h4>
-            <form class="" action="{% url 'process' %}" method="post">
+            <form class="" action="{% url 'cave' %}" method="post">
                {% csrf_token %}
-               <input type="hidden" name="building" value="house">
+               <input type="hidden" name="building" value="cave">
                <input type="submit" class="btn btn-info" name="enter" value="come on in">
             </form>
          </div>
          <div class="location">
             <h3>Casino</h3>
-            <h4>Earn 5-10 gold</h4>
-            <form class="" action="{% url 'process' %}" method="post">
+            <h4>Earn -50 to +50 gold</h4>
+            <form class="" action="{% url 'casino' %}" method="post">
                {% csrf_token %}
-               <input type="hidden" name="building" value="house">
+               <input type="hidden" name="building" value="casino">
                <input type="submit" class="btn btn-info" name="enter" value="come on in">
             </form>
          </div>
          <div class="location">
             <h3>Farm</h3>
-            <h4>Earn -50-+50 gold</h4>
-            <form class="" action="{% url 'process' %}" method="post">
+            <h4>Earn 2-3 gold</h4>
+            <form class="" action="{% url 'farm' %}" method="post">
                {% csrf_token %}
-               <input type="hidden" name="building" value="house">
+               <input type="hidden" name="building" value="farm">
                <input type="submit" class="btn btn-info" name="enter" value="come on in">
             </form>
          </div>

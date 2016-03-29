@@ -1,7 +1,11 @@
+print "gold app"
 from django.conf.urls import include, url
-from gold import views
+from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^process_money', views.process_money, name='process_money'),
+    url(r'^$', views.index),
+    url(r'^house', views.house, name='house'),
+    url(r'^cave', views.cave, name='cave'),
+    url(r'^casino', views.casino, name='casino'),
+    url(r'^farm', views.farm, name='farm'),
 ]
